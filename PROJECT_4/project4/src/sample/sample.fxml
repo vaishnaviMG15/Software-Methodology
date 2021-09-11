@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <center>
+      <GridPane BorderPane.alignment="CENTER">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="175.0" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="160.0" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <VBox prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <Label prefHeight="39.0" prefWidth="140.0" text="Sandwich Type">
+                     <VBox.margin>
+                        <Insets left="40.0" top="20.0" />
+                     </VBox.margin>
+                  </Label>
+                  <ComboBox fx:id="Type" onAction="#updateGUI" prefWidth="150.0">
+                     <padding>
+                        <Insets top="5.0" />
+                     </padding>
+                     <VBox.margin>
+                        <Insets left="15.0" />
+                     </VBox.margin>
+                  </ComboBox>
+                  <Label prefHeight="17.0" prefWidth="170.0" text="Ingredient Selections">
+                     <VBox.margin>
+                        <Insets left="20.0" top="50.0" />
+                     </VBox.margin>
+                  </Label>
+                  <ListView fx:id="SelectionsList" prefHeight="302.0" prefWidth="175.0" />
+               </children>
+            </VBox>
+            <VBox prefHeight="400.0" prefWidth="116.0" GridPane.columnIndex="1">
+               <children>
+                  <Label prefHeight="47.0" prefWidth="200.0" text="Ingredients included">
+                     <padding>
+                        <Insets left="20.0" top="30.0" />
+                     </padding>
+                  </Label>
+                  <TextArea fx:id="reqIngredients" disable="true" editable="false" prefHeight="112.0" prefWidth="200.0">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font></TextArea>
+                  <Button fx:id="Add" mnemonicParsing="false" onAction="#addSelection" prefHeight="27.0" prefWidth="77.0" text="Add &gt;&gt;">
+                     <VBox.margin>
+                        <Insets bottom="30.0" left="55.0" top="40.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Button fx:id="Remove" mnemonicParsing="false" onAction="#removeSelection" text="&lt;&lt; Remove">
+                     <VBox.margin>
+                        <Insets bottom="30.0" left="50.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Button fx:id="Clear" mnemonicParsing="false" onAction="#clearSelection" text="Clear Selected">
+                     <VBox.margin>
+                        <Insets left="40.0" />
+                     </VBox.margin>
+                  </Button>
+               </children>
+            </VBox>
+            <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="2">
+               <children>
+                  <ImageView fx:id="Picture" fitHeight="150.0" fitWidth="264.0" pickOnBounds="true" preserveRatio="true" />
+                  <Label prefHeight="17.0" prefWidth="133.0" text="Extra Ingredients" translateY="20.0">
+                     <VBox.margin>
+                        <Insets left="10.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Label text="Price $" translateY="160.0">
+                     <VBox.margin>
+                        <Insets left="175.0" />
+                     </VBox.margin>
+                  </Label>
+                  <TextField fx:id="Price" editable="false" maxWidth="85.0" prefHeight="27.0" prefWidth="128.0" translateY="175.0">
+                     <VBox.margin>
+                        <Insets left="155.0" />
+                     </VBox.margin>
+                  </TextField>
+                  <Button fx:id="addToOrder" mnemonicParsing="false" onAction="#addingToOrder" text="Add to Order" translateY="200.0">
+                     <VBox.margin>
+                        <Insets left="150.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Button fx:id="showOrder" mnemonicParsing="false" onAction="#displayOrder" text="Show Order" translateY="215.0">
+                     <VBox.margin>
+                        <Insets left="155.0" />
+                     </VBox.margin>
+                  </Button>
+                  <ListView fx:id="SelectedList" maxHeight="350.0" maxWidth="135.0" prefHeight="294.0" prefWidth="135.0">
+                     <VBox.margin>
+                        <Insets top="-65.0" />
+                     </VBox.margin>
+                  </ListView>
+               </children>
+            </VBox>
+         </children>
+      </GridPane>
+   </center>
+</BorderPane>

@@ -1,0 +1,48 @@
+<resources>
+    <string name="app_name">Project5</string>
+    <string name="museum_ticket">NYC Museum Tickets</string>
+    <string name="toast_message">Maximum of 5 tickets for each!</string>
+    <string name="calculate_ticket_price">Calculate Ticket Price</string>
+    <string name="ticket_price">Ticket Price</string>
+    <string name="sales_tax">Sales Tax</string>
+    <string name="ticket_total">Ticket Total</string>
+    <string name="museumimg">museumimg</string>
+    <string-array name="museums">
+        <item>American Museum of Natural History</item>
+        <item>Museum of Modern Art</item>
+        <item>Intrepid Sea, Air &amp; Space Museum</item>
+        <item>New York Hall of Science</item>
+    </string-array>
+    <string-array name="tickets">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>um
+    </string-array>
+
+    <string-array name="Labels_for_museum1">
+        <item>adult $23</item>
+        <item>senior $18</item>
+        <item>student $18</item>
+    </string-array>
+
+    <string-array name="Labels_for_museum2">
+        <item>adult $25</item>
+        <item>senior $18</item>
+        <item>student $14</item>
+    </string-array>
+
+    <string-array name="Labels_for_museum3">
+        <item>adult $33</item>
+        <item>senior $31</item>
+        <item>student $24</item>
+    </string-array>
+
+    <string-array name="Labels_for_museum4">
+        <item>adult $29</item>
+        <item>senior $24</item>
+        <item>student $24</item>
+    </string-array>
+</resources>

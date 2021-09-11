@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                                   xmlns:app="http://schemas.android.com/apk/res-auto"
+                                                   xmlns:tools="http://schemas.android.com/tools"
+                                                   android:layout_width="match_parent"
+                                                   android:layout_height="match_parent">
+
+    <TextView
+            android:layout_width="408dp"
+            android:layout_height="61dp" android:id="@+id/museumName"
+            app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" android:gravity="center" android:textSize="24sp"
+            android:fontFamily="sans-serif-black" android:textColor="#7159A8"/>
+    <ImageView
+            android:layout_width="326dp"
+            android:layout_height="98dp" app:srcCompat="@drawable/ic_launcher_foreground"
+            android:id="@+id/museumImage"
+            app:layout_constraintTop_toBottomOf="@+id/museumName" android:layout_marginTop="8dp"
+            app:layout_constraintStart_toStartOf="@+id/museumName" app:layout_constraintEnd_toEndOf="parent"
+            android:onClick="goToWebsite" android:contentDescription="@string/museumimg"/>
+    <TextView
+            android:layout_width="125dp"
+            android:layout_height="40dp" android:id="@+id/adultPrice"
+            app:layout_constraintEnd_toEndOf="@+id/museumImage" app:layout_constraintStart_toStartOf="@+id/museumImage"
+            app:layout_constraintHorizontal_bias="0.0" app:layout_constraintTop_toBottomOf="@+id/museumImage"
+            android:layout_marginTop="8dp" android:textSize="18sp" android:gravity="center"/>
+    <TextView
+            android:layout_width="125dp"
+            android:layout_height="40dp" android:id="@+id/seniorPrice"
+            app:layout_constraintEnd_toEndOf="@+id/adultPrice" app:layout_constraintStart_toStartOf="@+id/adultPrice"
+            app:layout_constraintHorizontal_bias="0.0" app:layout_constraintTop_toBottomOf="@+id/adultPrice"
+            android:layout_marginTop="24dp" android:textSize="18sp" android:gravity="center"
+            android:translationY="-10sp"/>
+    <Spinner
+            android:layout_width="167dp"
+            android:layout_height="40dp" android:id="@+id/spinner1"
+            app:layout_constraintStart_toEndOf="@+id/adultPrice"
+            app:layout_constraintBottom_toBottomOf="@+id/adultPrice" app:layout_constraintTop_toTopOf="@+id/adultPrice"
+            android:layout_marginStart="24dp" app:layout_constraintVertical_bias="0.642"/>
+    <TextView
+            android:layout_width="125dp"
+            android:layout_height="40dp" android:id="@+id/studentPrice"
+            app:layout_constraintStart_toStartOf="@+id/seniorPrice" app:layout_constraintEnd_toEndOf="@+id/seniorPrice"
+            app:layout_constraintTop_toBottomOf="@+id/seniorPrice" android:layout_marginTop="24dp"
+            app:layout_constraintHorizontal_bias="0.0" android:textSize="18sp" android:gravity="center"
+            android:translationY="-10sp"/>
+    <Spinner
+            android:layout_width="167dp"
+            android:layout_height="40dp" android:id="@+id/spinner2"
+            app:layout_constraintStart_toStartOf="@+id/spinner1"
+            app:layout_constraintEnd_toEndOf="@+id/spinner1" app:layout_constraintTop_toBottomOf="@+id/spinner1"
+            app:layout_constraintHorizontal_bias="0.0" android:layout_marginTop="24dp" android:translationY="-10sp"/>
+    <Spinner
+            android:layout_width="167dp"
+            android:layout_height="40dp" android:id="@+id/spinner3"
+            app:layout_constraintStart_toStartOf="@+id/spinner2"
+            app:layout_constraintEnd_toEndOf="@+id/spinner2" app:layout_constraintTop_toBottomOf="@+id/spinner2"
+            android:layout_marginTop="24dp" app:layout_constraintHorizontal_bias="0.0" android:translationY="-10sp"/>
+    <Button
+            android:text="@string/calculate_ticket_price"
+            android:layout_width="284dp"
+            android:layout_height="45dp" android:id="@+id/calculateTicketPrice"
+            app:layout_constraintEnd_toEndOf="@+id/spinner3" app:layout_constraintTop_toBottomOf="@+id/museumImage"
+            android:layout_marginTop="192dp" android:layout_marginEnd="20dp" android:onClick="calculate"
+            android:translationY="-10sp"/>
+    <TextView
+            android:layout_width="131dp"
+            android:layout_height="45dp" android:id="@+id/ticketPrice"
+            app:layout_constraintStart_toStartOf="@+id/calculateTicketPrice"
+            app:layout_constraintBottom_toBottomOf="@+id/calculateTicketPrice" android:translationY="55sp"
+            app:layout_constraintEnd_toEndOf="@+id/calculateTicketPrice" android:translationX="70sp"/>
+    <TextView
+            android:layout_width="131dp"
+            android:layout_height="45dp" android:id="@+id/salesTax"
+            app:layout_constraintStart_toStartOf="@+id/ticketPrice" app:layout_constraintEnd_toEndOf="@+id/ticketPrice"
+            app:layout_constraintTop_toBottomOf="@+id/ticketPrice" android:translationY="75sp"
+            android:translationX="70sp"/>
+    <TextView
+            android:layout_width="131dp"
+            android:layout_height="45dp" android:id="@+id/ticketTotal"
+            app:layout_constraintStart_toStartOf="@+id/salesTax" app:layout_constraintEnd_toEndOf="@+id/salesTax"
+            app:layout_constraintTop_toBottomOf="@+id/salesTax" android:translationY="90sp"
+            android:translationX="70sp"/>
+    <TextView
+            android:text="@string/ticket_price"
+            android:layout_width="131dp"
+            android:layout_height="45dp" android:id="@+id/textView5"
+            app:layout_constraintStart_toStartOf="@+id/studentPrice"
+            app:layout_constraintTop_toTopOf="@+id/ticketPrice"
+            app:layout_constraintBottom_toBottomOf="@+id/ticketPrice" android:translationY="55sp"/>
+    <TextView
+            android:text="@string/sales_tax"
+            android:layout_width="131dp"
+            android:layout_height="45dp" android:id="@+id/textView6"
+            app:layout_constraintStart_toStartOf="@+id/textView5" app:layout_constraintEnd_toEndOf="@+id/textView5"
+            app:layout_constraintTop_toBottomOf="@+id/ticketPrice" android:translationY="75sp"/>
+    <TextView
+            android:text="@string/ticket_total"
+            android:layout_width="131dp"
+            android:layout_height="45dp" android:id="@+id/textView7"
+            app:layout_constraintStart_toStartOf="@+id/textView6" app:layout_constraintEnd_toEndOf="@+id/textView6"
+            app:layout_constraintTop_toBottomOf="@+id/salesTax"
+            app:layout_constraintBottom_toBottomOf="@+id/ticketTotal" android:translationY="90sp"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
